@@ -1,3 +1,10 @@
+// Entrypoint: boot this entry's forge and run the entry <-> env lifecycle.
+//
+// The server this file boots is the forge in app.ts — an in-memory GitHub
+// core clone serving REST v3, GraphQL, MCP, and git smart-HTTP. This file
+// owns only the harness side: bind an ephemeral port, register it with the
+// env, poll until the trial is done, then exit 0.
+//
 // The entry <-> env lifecycle, as env/src/wire.ts settles it: bind an ephemeral port, tell the env the
 // port it bound, then poll until the env says the trial is over and exit 0. Keep this file as it is:
 // the suite scores the server app.ts builds, and the lifecycle is the harness's, not the contest's.
